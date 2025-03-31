@@ -6,6 +6,10 @@ void main() async {
   await initializeNotifications();
   runApp(MyApp());
 }
+//Creating an instance of the FlutterLocalNotificationsPlugin class.
+FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
+    
 //initializing notification
 Future<void> initializeNotifications() async {
   const AndroidInitializationSettings androidSettings =
@@ -17,9 +21,7 @@ Future<void> initializeNotifications() async {
   await flutterLocalNotificationsPlugin.initialize(settings);
 }
 
-//Creating an instance of the FlutterLocalNotificationsPlugin class.
-FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-    FlutterLocalNotificationsPlugin();
+
 //show notification function
 Future<void> showNotification(String title, String content) async {
   const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
